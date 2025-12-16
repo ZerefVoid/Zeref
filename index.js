@@ -16,17 +16,20 @@ async function startBot() {
         const sender = msg.key.remoteJid;
         const text = msg.message.conversation || '';
 
+        // Cuma respon chat grup
+        if (!sender.endsWith('@g.us')) return;
+
         // AKTIVASI BOT
         if (botStatus === "OFF" && text.toLowerCase() === "halo zeref") {
             botStatus = "ON";
-            await sock.sendMessage(sender, { text: "✅ Bot Zeref aktif!" });
+            await sock.sendMessage(sender, { text: "✅ Bot Zeref aktif di grup!" });
             return;
         }
 
         // NONAKTIFKAN BOT
         if (botStatus === "ON" && text.toLowerCase() === "zeref mode off") {
             botStatus = "OFF";
-            await sock.sendMessage(sender, { text: "❌ Bot Zeref mati!" });
+            await sock.sendMessage(sender, { text: "❌ Bot Zeref mati di grup!" });
             return;
         }
 
