@@ -1,13 +1,14 @@
 {
   "name": "bot-zeref",
   "version": "1.0.0",
+  "description": "Bot WhatsApp Zeref untuk grup, bisa tugas dan file",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "start": "node index.js"
   },
+  "author": "Nama Kamu",
+  "license": "MIT",
   "dependencies": {
-    "@whiskeysockets/baileys": "^6.7.0",
-    "fs-extra": "^11.2.0"
+    "@adiwajshing/baileys": "^5.0.0"
   }
 }
